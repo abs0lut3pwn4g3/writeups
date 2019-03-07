@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=737534bdbf7be8f33ffdf3fe9fba5e59a3f165f0">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Bsides Ctf Thekey | Abs0lut3Pwn4g3</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Bsides Ctf Thekey" />
+<meta name="author" content="eshaan7" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Challenge: TheKey(for 100 points)" />
+<meta property="og:description" content="Challenge: TheKey(for 100 points)" />
+<link rel="canonical" href="http://localhost:4000/2019/03/05/bsides-ctf-TheKey.html" />
+<meta property="og:url" content="http://localhost:4000/2019/03/05/bsides-ctf-TheKey.html" />
+<meta property="og:site_name" content="Abs0lut3Pwn4g3" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-05T00:00:00+05:30" />
+<script type="application/ld+json">
+{"headline":"Bsides Ctf Thekey","dateModified":"2019-03-05T00:00:00+05:30","datePublished":"2019-03-05T00:00:00+05:30","description":"Challenge: TheKey(for 100 points)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/05/bsides-ctf-TheKey.html"},"@type":"BlogPosting","url":"http://localhost:4000/2019/03/05/bsides-ctf-TheKey.html","author":{"@type":"Person","name":"eshaan7"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Abs0lut3Pwn4g3</h1>
+        <h2>writeups</h2>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <small>5 March 2019</small>
+<h1>Bsides Ctf Thekey</h1>
+
+<p class="view">by <a href="https://github.com/eshaan7">eshaan7</a></p>
+
+<h3 id="challenge-thekeyfor-100-points">Challenge: TheKey(for 100 points)</h3>
+
+<p>We are given a  <code class="highlighter-rouge">thekey.pcapng</code> packet file. On analyzing with wireshark, we see that we have a lot of usb data on this pcap file. <br />
+let´s extract the Leftover Capture Data with <code class="highlighter-rouge">tshark</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tshark -r thekey.pcapng -T fields -e usb.capdata
+</code></pre></div></div>
+
+<p><img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/1.png" /></p>
+
+<p>we need only numbers without zeros and separators</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tshark -r thekey.pcapng -T fields -e usb.capdata |  grep -v '00:00:00:00:00:00:00:00' | cut -d ':' -f3
+</code></pre></div></div>
+
+<p><img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/2.png" /></p>
+
+<p>save this to <code class="highlighter-rouge">usb_keys.txt</code></p>
+
+<p>using sublime, I removed the newline chars converted the keys into hex value and basically a python list (regex are awesome!)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>keys = [ "0x19", "0x0C", "0x0C", "0x10", "0x2C", "0x09", "0x0"...............
+</code></pre></div></div>
+
+<p><br />
+Next, on the <a href="https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf">pdf</a> (Page 53), we have a key map of a USB Keyboard</p>
+
+<p><img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/usbDoc.png" /></p>
+
+<p>I had to manually copy &amp; paste the key bindings and then scrap it using <code class="highlighter-rouge">tr -d " " -f1</code> and sublime(again, learn regex!) and converted it to another python list!</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ "0x00" :"",
+"0x04" :"a",
+"0x05" :"b",
+"0x06" :"c",
+"0x07" :"d",
+... }
+</code></pre></div></div>
+
+<p>but wait, we have too much data, let’s use a python script to do the work for us! :D</p>
+
+<p><img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/pyscript.png" /></p>
+
+<p>run the script and get the flag!</p>
+
+<p><img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/runpyscript.png" /></p>
+
+<p>oh ok not really, the output is really messed up, what we did was replicate these key-taps on a terminal and that got us a clear idea about the flag, it is a keyboard capture afterall!
+But I tried submitting this flag and it kept saying it’s wrong so I changed it to uppercase and voila!</p>
+
+<p>The flag is: <code class="highlighter-rouge">CTF{MY_FAVOURITE_EDITOR_IS_VIM}</code></p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

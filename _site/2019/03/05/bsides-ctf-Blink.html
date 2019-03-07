@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=737534bdbf7be8f33ffdf3fe9fba5e59a3f165f0">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Bsides Ctf Blink | Abs0lut3Pwn4g3</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Bsides Ctf Blink" />
+<meta name="author" content="eshaan7" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Challenge: Blink(for 50 points)" />
+<meta property="og:description" content="Challenge: Blink(for 50 points)" />
+<link rel="canonical" href="http://localhost:4000/2019/03/05/bsides-ctf-Blink.html" />
+<meta property="og:url" content="http://localhost:4000/2019/03/05/bsides-ctf-Blink.html" />
+<meta property="og:site_name" content="Abs0lut3Pwn4g3" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-05T00:00:00+05:30" />
+<script type="application/ld+json">
+{"headline":"Bsides Ctf Blink","dateModified":"2019-03-05T00:00:00+05:30","datePublished":"2019-03-05T00:00:00+05:30","description":"Challenge: Blink(for 50 points)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/05/bsides-ctf-Blink.html"},"@type":"BlogPosting","url":"http://localhost:4000/2019/03/05/bsides-ctf-Blink.html","author":{"@type":"Person","name":"eshaan7"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Abs0lut3Pwn4g3</h1>
+        <h2>writeups</h2>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <small>5 March 2019</small>
+<h1>Bsides Ctf Blink</h1>
+
+<p class="view">by <a href="https://github.com/eshaan7">eshaan7</a></p>
+
+<h3 id="challenge-blinkfor-50-points">Challenge: Blink(for 50 points)</h3>
+
+<p>Description</p>
+
+<p>Get past the Jedi mind trick to find the flag you are looking for.</p>
+
+<p>We are provided with a blink.apk file. <br />
+On installing the app on a mobile, we see this:</p>
+
+<p><img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/50_blink_COMPLETE/appMobileSS.png" width="250px" height="350px" /></p>
+
+<p>Then I used apktool to decompile it.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apktool d blink.apk
+</code></pre></div></div>
+
+<p>Going into the smali folder created by apktool</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blink/smali/com/example/blink
+</code></pre></div></div>
+
+<p>There’s a <code class="highlighter-rouge">r2d2.smali</code> file. Inside there’s a string of base64 encoded image.</p>
+
+<p><img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/50_blink_COMPLETE/r2d2img.png" /></p>
+
+<p>I saved the string to <code class="highlighter-rouge">blink_r2d2.txt</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat blink_r2d2.txt | base64 -d &gt; flag.png
+</code></pre></div></div>
+
+<p>On decoding the base64 string, and we get an image and the flag.</p>
+
+<p><img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/50_blink_COMPLETE/flag.jpg" /></p>
+
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,1 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-07T23:34:09+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Abs0lut3Pwn4g3</title><subtitle>writeups</subtitle><entry><title type="html">Test</title><link href="http://localhost:4000/2019/03/07/test.html" rel="alternate" type="text/html" title="Test" /><published>2019-03-07T00:00:00+05:30</published><updated>2019-03-07T00:00:00+05:30</updated><id>http://localhost:4000/2019/03/07/test</id><content type="html" xml:base="http://localhost:4000/2019/03/07/test.html">&lt;h1 id=&quot;testing-123&quot;&gt;testing 123&lt;/h1&gt;</content><author><name></name></author><summary type="html">testing 123</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-07T23:52:33+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Abs0lut3Pwn4g3</title><subtitle>writeups</subtitle><entry><title type="html">Bsides Ctf Blink</title><link href="http://localhost:4000/2019/03/05/bsides-ctf-Blink.html" rel="alternate" type="text/html" title="Bsides Ctf Blink" /><published>2019-03-05T00:00:00+05:30</published><updated>2019-03-05T00:00:00+05:30</updated><id>http://localhost:4000/2019/03/05/bsides-ctf-Blink</id><content type="html" xml:base="http://localhost:4000/2019/03/05/bsides-ctf-Blink.html">&lt;h3 id=&quot;challenge-blinkfor-50-points&quot;&gt;Challenge: Blink(for 50 points)&lt;/h3&gt;
+
+&lt;p&gt;Description&lt;/p&gt;
+
+&lt;p&gt;Get past the Jedi mind trick to find the flag you are looking for.&lt;/p&gt;
+
+&lt;p&gt;We are provided with a blink.apk file. &lt;br /&gt;
+On installing the app on a mobile, we see this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/50_blink_COMPLETE/appMobileSS.png&quot; width=&quot;250px&quot; height=&quot;350px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I used apktool to decompile it.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apktool d blink.apk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Going into the smali folder created by apktool&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink/smali/com/example/blink
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There’s a &lt;code class=&quot;highlighter-rouge&quot;&gt;r2d2.smali&lt;/code&gt; file. Inside there’s a string of base64 encoded image.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/50_blink_COMPLETE/r2d2img.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I saved the string to &lt;code class=&quot;highlighter-rouge&quot;&gt;blink_r2d2.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat blink_r2d2.txt | base64 -d &amp;gt; flag.png
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;On decoding the base64 string, and we get an image and the flag.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/50_blink_COMPLETE/flag.jpg&quot; /&gt;&lt;/p&gt;</content><author><name>eshaan7</name></author><summary type="html">Challenge: Blink(for 50 points)</summary></entry><entry><title type="html">Bsides Ctf Thekey</title><link href="http://localhost:4000/2019/03/05/bsides-ctf-TheKey.html" rel="alternate" type="text/html" title="Bsides Ctf Thekey" /><published>2019-03-05T00:00:00+05:30</published><updated>2019-03-05T00:00:00+05:30</updated><id>http://localhost:4000/2019/03/05/bsides-ctf-TheKey</id><content type="html" xml:base="http://localhost:4000/2019/03/05/bsides-ctf-TheKey.html">&lt;h3 id=&quot;challenge-thekeyfor-100-points&quot;&gt;Challenge: TheKey(for 100 points)&lt;/h3&gt;
+
+&lt;p&gt;We are given a  &lt;code class=&quot;highlighter-rouge&quot;&gt;thekey.pcapng&lt;/code&gt; packet file. On analyzing with wireshark, we see that we have a lot of usb data on this pcap file. &lt;br /&gt;
+let´s extract the Leftover Capture Data with &lt;code class=&quot;highlighter-rouge&quot;&gt;tshark&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tshark -r thekey.pcapng -T fields -e usb.capdata
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;we need only numbers without zeros and separators&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tshark -r thekey.pcapng -T fields -e usb.capdata |  grep -v '00:00:00:00:00:00:00:00' | cut -d ':' -f3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;save this to &lt;code class=&quot;highlighter-rouge&quot;&gt;usb_keys.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;using sublime, I removed the newline chars converted the keys into hex value and basically a python list (regex are awesome!)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;keys = [ &quot;0x19&quot;, &quot;0x0C&quot;, &quot;0x0C&quot;, &quot;0x10&quot;, &quot;0x2C&quot;, &quot;0x09&quot;, &quot;0x0&quot;...............
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Next, on the &lt;a href=&quot;https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf&quot;&gt;pdf&lt;/a&gt; (Page 53), we have a key map of a USB Keyboard&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/usbDoc.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I had to manually copy &amp;amp; paste the key bindings and then scrap it using &lt;code class=&quot;highlighter-rouge&quot;&gt;tr -d &quot; &quot; -f1&lt;/code&gt; and sublime(again, learn regex!) and converted it to another python list!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{ &quot;0x00&quot; :&quot;&quot;,
+&quot;0x04&quot; :&quot;a&quot;,
+&quot;0x05&quot; :&quot;b&quot;,
+&quot;0x06&quot; :&quot;c&quot;,
+&quot;0x07&quot; :&quot;d&quot;,
+... }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;but wait, we have too much data, let’s use a python script to do the work for us! :D&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/pyscript.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;run the script and get the flag!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/forensics/100_thekey_COMPLETE/pics/runpyscript.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;oh ok not really, the output is really messed up, what we did was replicate these key-taps on a terminal and that got us a clear idea about the flag, it is a keyboard capture afterall!
+But I tried submitting this flag and it kept saying it’s wrong so I changed it to uppercase and voila!&lt;/p&gt;
+
+&lt;p&gt;The flag is: &lt;code class=&quot;highlighter-rouge&quot;&gt;CTF{MY_FAVOURITE_EDITOR_IS_VIM}&lt;/code&gt;&lt;/p&gt;</content><author><name>eshaan7</name></author><summary type="html">Challenge: TheKey(for 100 points)</summary></entry></feed>

@@ -5,7 +5,7 @@ layout: default
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
 <h1>{{ page.title }}</h1>
 
-<p class="view">by {{ page.author | default: site.author }}</p>
+<p class="view">by <a href="https://github.com/{{ page.author | default: site.author }}" style="tex-decoration: none; color: inherit">{{ page.author}}</a></p>
 
 {{content}}
 
