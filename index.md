@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Abs0lut3Pwn4g3
-description: Writeups
+description: writeups
 ---
 <h1>Latest Writeups</h1>
 
