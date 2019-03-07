@@ -5,11 +5,9 @@ author: eshaan7
 
 ### Challenge: Blink(for 50 points)
 
-### Team: <a href="https://ctftime.org/team/72103">Abs0lut3Pwn4g3</a>
+Description
 
-> Description
-
->>Get past the Jedi mind trick to find the flag you are looking for.
+Get past the Jedi mind trick to find the flag you are looking for.
 
 We are provided with a blink.apk file. <br>
 On installing the app on a mobile, we see this:
