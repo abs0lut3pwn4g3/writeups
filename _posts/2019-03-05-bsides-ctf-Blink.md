@@ -9,7 +9,7 @@ Description
 
 Get past the Jedi mind trick to find the flag you are looking for.
 
-We are provided with a blink.apk file. <br>
+We are provided with a `blink.apk` file. <br>
 On installing the app on a mobile, we see this:
 
 <img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/50_blink_COMPLETE/appMobileSS.png" width="250px" height="350px">
