@@ -2,10 +2,10 @@
 layout: post
 author: X3eRo0
 --- 
-# Challenge: Sum(for 143 points)
+### Challenge: Sum(for 143 points)
 
 
-                                            Abs0lut3Pwn4g3
+
 
 <pre id="user-content-taag_output_text">
            _____ _________________                 __            _               __________________
@@ -16,9 +16,10 @@ author: X3eRo0
 </pre>
               
               
-                                          **143 Points - PWNABLE**
+                                          143 Points - PWNABLE
                                           
-**Challenge Description**:
+                                          
+Challenge Description:
  
 
                                         Sum it up!
