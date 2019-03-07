@@ -2,7 +2,11 @@
 layout: post
 author: X3eRo0
 --- 
-# SUM : 143 Points
+# Challenge: Sum(for 143 points)
+
+
+                                            Abs0lut3Pwn4g3
+
 <pre id="user-content-taag_output_text">
            _____ _________________                 __            _               __________________
           |__  // ____/ ____/__  /                / /_  ______  (_)___  _____   / ____/_  __/ ____/
