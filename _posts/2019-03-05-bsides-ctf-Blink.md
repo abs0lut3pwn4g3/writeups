@@ -1,3 +1,8 @@
+---
+layout: post
+author: eshaan7
+---
+
 ### Challenge: Blink(for 50 points)
 
 ### Team: <a href="https://ctftime.org/team/72103">Abs0lut3Pwn4g3</a>
