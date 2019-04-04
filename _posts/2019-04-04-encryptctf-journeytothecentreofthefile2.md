@@ -10,7 +10,7 @@ layout: post
 	
 	This challenge unlocks after completing "Journey to the centre of the file 1" challenge.
 
-	[_Improvise. Adapt. Overcome_](https://imgur.com/gallery/wMbXB "Improvise. Adapt. Overcome" )
+	[Improvise. Adapt. Overcome](https://imgur.com/gallery/wMbXB)
 	file: (ziptunnel2)[ ]
 	Author: maskofmydisguise
 
@@ -80,6 +80,6 @@ This script directly spits out the flag,
 
 	FLAG: encryptCTF{f33ls_g00d_d0nt_it?}
 
-Now, one thing is that I am not gonna explicitly explain every line of the code, cz (John Hammond)[https://www.youtube.com/user/RootOfTheNull/] actually has done a (writeup video)[https://www.youtube.com/watch?v=wRSwagjvSqU&t=2s] on a similar challenge.
+Now, one thing is that I am not gonna explicitly explain every line of the code, cz <a href="https://www.youtube.com/user/RootOfTheNull">John Hammond</a> actually has done a <a href="https://www.youtube.com/watch?v=wRSwagjvSqU">writeup video</a> on a similar challenge.
 
 *YeAh, I know what you thinkin' it was copied. OMG!*
