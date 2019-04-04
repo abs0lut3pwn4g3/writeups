@@ -23,7 +23,7 @@ Proceed as below,
 
 <img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/stressedout.png">
 
-We do `exiftool` and see a string `1_4M_Str3ss3d_0ut`, which is not the flag, but it is the password to extract a hidden png file using `steghide`. 
+We do `exiftool` and see a string `1_4M_Str3ss3d_0ut`, which is not the flag, but it is the password to extract a hidden jpg file using `steghide`. 
 On closely looking at the extracted [flag.jpg](https://github.com/mishrasunny174/encrypt-ctf/blob/master/Stego/100_Stressed_out%3F/flag.jpg) file, we can see there is a flag which can be seen clearly on increasing brightness or using ```stegsolve.jar``` on it.
 
 	FLAG: encryptCTF{tyl3r_j0s3ph_is_4_g0d}
