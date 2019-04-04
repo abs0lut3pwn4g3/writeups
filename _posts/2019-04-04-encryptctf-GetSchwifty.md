@@ -4,12 +4,12 @@ layout: post
 ---
 
 
-### Challenge: Stressed Out ?(for 150 points, dynamic) [Forensics]
+### Challenge: Get Schwifty ?(for 150 points, dynamic) [Forensics]
 
 #### Challenge description: 
 
 	Evil Morty, the first democratically-elected President of the Citadel of Ricks, has killed off twenty-seven known Ricks from various dimensions, as well as capturing, torturing, and enslaving hundreds of Mortys. As a fellow Rick-less Morty, Investigator Rick gives you a file revealing Evil Morty's past and true nature. However he cannot seem to access it. Can you help recover it to stop Evil Morty ? 
-	Download link here: (https://drive.google.com/file/d/1XxqRFFpn9Zj7gNQ6Ahg74rTAFPbkeNq9/view?usp=drive_open)[link]
+	Download link here: [link](https://drive.google.com/file/d/1XxqRFFpn9Zj7gNQ6Ahg74rTAFPbkeNq9/view?usp=drive_open)
 	Author: maskofmydisguise
 
 
@@ -18,10 +18,10 @@ layout: post
 We are given a `GetSchwifty.7z` file, we extract it to find a mountable disk image `GetSchwifty.7z`.
 On mounting it we see that it is empty.
 
-<img src="GetSchwifty_mounted_image.png">
+<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/GetSchwifty_mounted_image.png">
 
 So we need to analyze this disk image and try to recover deleted data, if any. 
-We can use (testdisk, data recovery tool)[https://www.cgsecurity.org/wiki/TestDisk] for this.
+We can use [testdisk, data recovery tool](https://www.cgsecurity.org/wiki/TestDisk) for this.
 
 	┌─[eshaan@HP-ubuntu]-[~/Desktop/CTFs/Abs0lut3Pwn4g3_CTF/encrypt-ctf-2019/Forensics/150_Get_Schwifty/files_in_img/tmp]
     └─➤ ls
@@ -29,8 +29,8 @@ We can use (testdisk, data recovery tool)[https://www.cgsecurity.org/wiki/TestDi
 	┌─[eshaan@HP-ubuntu]-[~/Desktop/CTFs/Abs0lut3Pwn4g3_CTF/encrypt-ctf-2019/Forensics/150_Get_Schwifty/files_in_img/tmp]
 	└─➤ sudo testdisk GetSchwifty.img
 
-<img src="GetSchwifty_testdisk1.png">
-<img src="GetSchwifty_testdisk2.png">
+<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/GetSchwifty_testdisk1.png">
+<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/GetSchwifty_testdisk2.png">
 
 Here we see that we get a few files,
 

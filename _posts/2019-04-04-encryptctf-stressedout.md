@@ -16,12 +16,12 @@ layout: post
 
 #### Let's capture tis fl4g: 
 
-We are given a [dontstressoutkiddo.zip](https://github.com/mishrasunny174/encrypt-ctf/blob/master/Stego/100_Stressed_out%3F/dontstressoutkiddo.zip) file, we unzip it to find an audio `dontstressoutkiddo.wav` which is playing (Stressed Out by Twenty One Pilots)[https://www.youtube.com/watch?v=pXRviuL6vMY].
+We are given a [dontstressoutkiddo.zip](https://github.com/mishrasunny174/encrypt-ctf/blob/master/Stego/100_Stressed_out%3F/dontstressoutkiddo.zip) file, we unzip it to find an audio `dontstressoutkiddo.wav` which is playing [Stressed Out by Twenty One Pilots](https://www.youtube.com/watch?v=pXRviuL6vMY).
 Analyzing with sonic visualizer, trying to find something in the spectrogram, we get nada. 
 
 Proceed as below,
 
-<img src="stressedout.png">
+<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/stressedout.png">
 
 We do `exiftool` and see a string `1_4M_Str3ss3d_0ut`, which is not the flag, but it is the password to extract a hidden png file using `steghide`. 
 On closely looking at the extracted [flag.jpg](https://github.com/mishrasunny174/encrypt-ctf/blob/master/Stego/100_Stressed_out%3F/flag.jpg) file, we can see there is a flag which can be seen clearly on increasing brightness or using ```stegsolve.jar``` on it.
