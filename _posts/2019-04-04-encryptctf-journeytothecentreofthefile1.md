@@ -1,4 +1,4 @@
-o---
+---
 author: eshaan7
 layout: post
 ---
@@ -43,7 +43,7 @@ As the script loops over every stage, it finally hits a stop when we get a `flag
 
 	FLAG: encryptCTF{w422up_b14tch3s}
 
-
+#### Thankyou for reading, happy hackin'! ~ [eshaan7](https://eshaan7.cf/)
 
 
 

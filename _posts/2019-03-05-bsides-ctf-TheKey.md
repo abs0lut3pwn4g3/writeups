@@ -51,3 +51,5 @@ oh ok not really, the output is really messed up, what we did was replicate thes
 But I tried submitting this flag and it kept saying it's wrong so I changed it to uppercase and voila!
 
 The flag is: `CTF{MY_FAVOURITE_EDITOR_IS_VIM}`
+
+#### Thankyou for reading, happy hackin'! ~ [eshaan7](https://eshaan7.cf/)

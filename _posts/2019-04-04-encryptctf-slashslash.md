@@ -49,3 +49,5 @@ We get the location of the flag. :)
 Virtual environments are awesome!
 The purpose is to ease development and also store config, requirements.txt, no need to pip install anything.
 I made this challenge to introduce people to environment variables, virtual environment and basic web development using Flask microframework which I love. :)
+
+#### Thankyou for reading, happy hackin'! ~ [eshaan7](https://eshaan7.cf/)

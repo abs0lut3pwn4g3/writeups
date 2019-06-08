@@ -51,3 +51,6 @@ Also, (school work(do not open))[] had a random audio file.
 #### BONUS:
 
 the (hahahaha)[] file was actually a broken `.zip` file which had to be fixed using `hexedit` to set the correct <a href="https://en.wikipedia.org/wiki/File_format#Magic_number">magic bytes</a>. Which contains a 2nd flag, which I forgot to implement. sorry xD
+
+
+#### Thankyou for reading, happy hackin'! ~ [eshaan7](https://eshaan7.cf/)

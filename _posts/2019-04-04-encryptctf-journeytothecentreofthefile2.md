@@ -83,3 +83,5 @@ This script directly spits out the flag,
 Now, one thing is that I am not gonna explicitly explain every line of the code, cz <a href="https://www.youtube.com/user/RootOfTheNull">John Hammond</a> actually has done a <a href="https://www.youtube.com/watch?v=wRSwagjvSqU">writeup video</a> on a similar challenge.
 
 *YeAh, I know what you thinkin' it was copied. OMG!*
+
+#### Thankyou for reading, happy hackin'! ~ [eshaan7](https://eshaan7.cf/)

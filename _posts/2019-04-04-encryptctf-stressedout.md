@@ -27,3 +27,5 @@ We do `exiftool` and see a string `1_4M_Str3ss3d_0ut`, which is not the flag, bu
 On closely looking at the extracted [flag.jpg](https://github.com/mishrasunny174/encrypt-ctf/blob/master/Stego/100_Stressed_out%3F/flag.jpg) file, we can see there is a flag which can be seen clearly on increasing brightness or using ```stegsolve.jar``` on it.
 
 	FLAG: encryptCTF{tyl3r_j0s3ph_is_4_g0d}
+
+#### Thankyou for reading, happy hackin'! ~ [eshaan7](https://eshaan7.cf/)

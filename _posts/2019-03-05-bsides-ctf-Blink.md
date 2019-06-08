@@ -34,3 +34,4 @@ On decoding the base64 string, and we get an image and the flag.
 
 <img src="https://raw.githubusercontent.com/Eshaan7/BSidesSF_CTF_2019_datadumps/master/50_blink_COMPLETE/flag.jpg">
 
+#### Thankyou for reading, happy hackin'! ~ [eshaan7](https://eshaan7.cf/)
