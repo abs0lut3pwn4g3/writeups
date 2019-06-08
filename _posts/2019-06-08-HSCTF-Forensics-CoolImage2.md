@@ -8,12 +8,10 @@ layout: post
 
 #### Challenge description: 
 
-<pre>
-Written by: cppio
-My friend sent me this image, but I can't open it. Can you help me open the image?
-Free Hint: Try looking at the raw contents of the file.
-File: cool.png
-</pre>
+	Written by: cppio
+	My friend sent me this image, but I can't open it. Can you help me open the image?
+	File: cool.png
+	Free Hint: Try looking at the raw contents of the file.
 
 <img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_desc.png" width="300" align="centre"/>
 
