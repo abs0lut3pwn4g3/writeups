@@ -19,7 +19,7 @@ File: cool.png
 
 #### Let's capture tis fl4g: 
 
-<p>We have a <code>cool.png</code> file, on opening it, we get,
+We have a `cool.png` file, on opening it, we get,
 
 <img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_openFile.png" width="300" height="300"> 
 
