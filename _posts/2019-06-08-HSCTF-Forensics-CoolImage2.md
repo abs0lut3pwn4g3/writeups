@@ -15,13 +15,13 @@ Free Hint: Try looking at the raw contents of the file.
 File: cool.png
 </pre>
 
-<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_desc.png" width="300" align="centre">
+<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_desc.png" width="300" align="centre"/>
 
 #### Let's capture tis fl4g: 
 
 We have a `cool.png` file, on opening it, we get,
 
-<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_openFile.png" width="300" height="300"> 
+<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_openFile.png" width="300" height="300"/> 
 
 Let's see the `hexdump` of this file with the command,
 
@@ -29,7 +29,7 @@ Let's see the `hexdump` of this file with the command,
   
 We get, 
 
-<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_hexdump.png" width="1000" height="400">
+<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_hexdump.png" width="900" height="400"/>
 
 As we can see here, there's some string in the header i.e. extra bytes that is messing up our `cool.png` file that's why we are not able to open it in image viewer, <br>
 We can simply use `foremost` to extract the image from the messed up file we have.
@@ -37,7 +37,7 @@ We can simply use `foremost` to extract the image from the messed up file we hav
 	$ foremost cool.png
 	$ eog output/png/*.png
 	
-<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_flag.png" width="500" height="200">
+<img src="https://raw.githubusercontent.com/abs0lut3pwn4g3/writeups/master/_posts/hsCTFImages/CoolImage2_flag.png" width="500" height="200"/>
 
 We have the Flag!
 
