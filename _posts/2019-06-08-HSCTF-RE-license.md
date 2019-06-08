@@ -27,7 +27,8 @@ author: X3eRo0
 Challenge Description:
  
 
-Written by: ItzSomebody
+
+        Written by: ItzSomebody
 
 	Description: 
 	Keith made a cool license-checking program but he forgot the flag he used to create the key! To make matters worse, he lost the source code and stripped the binary for his license-generator program. Can you help Keith recover his flag? All he knows is:
