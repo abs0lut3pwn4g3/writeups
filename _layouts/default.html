@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script type="text/javascript" src="/assets/bganimate.js"></script>
 
 {% seo %}
   </head>
@@ -17,7 +18,8 @@
         <h2>{{ site.description}}</h2>
       </div>
     </header>
-
+  <canvas id="scene"></canvas>
+  <input id="copy" value="Abs0lut3Pwn4g3" style="display:none;"/>
     <div class="container">
       <section id="main_content">
         {{ content }}
