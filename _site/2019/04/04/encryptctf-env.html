@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script type="text/javascript" src="/assets/js/bganimate.js"></script>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Encryptctf Env | Abs0lut3Pwn4g3</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Encryptctf Env" />
+<meta name="author" content="eshaan7" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Challenge: ENV(for 100 points, static) [WEB]" />
+<meta property="og:description" content="Challenge: ENV(for 100 points, static) [WEB]" />
+<link rel="canonical" href="http://localhost:4000/2019/04/04/encryptctf-env.html" />
+<meta property="og:url" content="http://localhost:4000/2019/04/04/encryptctf-env.html" />
+<meta property="og:site_name" content="Abs0lut3Pwn4g3" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-04T00:00:00+05:30" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"eshaan7"},"description":"Challenge: ENV(for 100 points, static) [WEB]","@type":"BlogPosting","headline":"Encryptctf Env","dateModified":"2019-04-04T00:00:00+05:30","datePublished":"2019-04-04T00:00:00+05:30","url":"http://localhost:4000/2019/04/04/encryptctf-env.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/encryptctf-env.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    
+
+    <header>
+      <div class="container">
+        <h1>Abs0lut3Pwn4g3</h1>
+        <h2>writeups</h2>
+      </div>
+    </header>
+  
+    <div class="container">
+      <section id="main_content">
+        <small>4 April 2019</small>
+<h1>Encryptctf Env</h1>
+
+<p class="view">by <a href="https://github.com/eshaan7" style="tex-decoration: none; color: inherit">eshaan7</a></p>
+
+<h3 id="challenge-envfor-100-points-static-web">Challenge: ENV(for 100 points, static) [WEB]</h3>
+
+<h4 id="challenge-description">Challenge description:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Einstien said,"_time_ was relative, right?"
+link: 
+Author: maskofmydisguise
+</code></pre></div></div>
+
+<h4 id="lets-capture-tis-fl4g">Let’s capture tis fl4g:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://104.154.106.182:6060/whatsthetime/$(date "+%s")
+</code></pre></div></div>
+
+<p>Repeat this until it throws you the flag.</p>
+
+<p>Can also be done with python,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="n">host</span> <span class="o">=</span> <span class="s">"104.154.106.182"</span>
+<span class="n">port</span> <span class="o">=</span> <span class="s">'6060'</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://104.154.106.182:6060/whatsthetime/'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())))</span>
+    <span class="k">if</span> <span class="s">"404"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+        <span class="k">break</span>
+</code></pre></div></div>
+
+<p>Repeat this until it throws you the flag.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FLAG: encryptCTF{v1rtualenvs_4re_c00l}
+</code></pre></div></div>
+
+<h4 id="thankyou-for-reading-happy-hackin--eshaan7">Thankyou for reading, happy hackin’! ~ <a href="https://eshaan7.cf/">eshaan7</a></h4>
+
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+<canvas id="scene"></canvas>
+    <input id="copy" value="Abs0lut3Pwn4g3" style="display:none;"/>
+    
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script type="text/javascript" src="/assets/js/bganimate.js"></script>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Encryptctf Slashslash | Abs0lut3Pwn4g3</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Encryptctf Slashslash" />
+<meta name="author" content="eshaan7" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Challenge: Slash Slash(for 50 points, static) [WEB]" />
+<meta property="og:description" content="Challenge: Slash Slash(for 50 points, static) [WEB]" />
+<link rel="canonical" href="http://localhost:4000/2019/04/04/encryptctf-slashslash.html" />
+<meta property="og:url" content="http://localhost:4000/2019/04/04/encryptctf-slashslash.html" />
+<meta property="og:site_name" content="Abs0lut3Pwn4g3" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-04T00:00:00+05:30" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"eshaan7"},"description":"Challenge: Slash Slash(for 50 points, static) [WEB]","@type":"BlogPosting","headline":"Encryptctf Slashslash","dateModified":"2019-04-04T00:00:00+05:30","datePublished":"2019-04-04T00:00:00+05:30","url":"http://localhost:4000/2019/04/04/encryptctf-slashslash.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/encryptctf-slashslash.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    
+
+    <header>
+      <div class="container">
+        <h1>Abs0lut3Pwn4g3</h1>
+        <h2>writeups</h2>
+      </div>
+    </header>
+  
+    <div class="container">
+      <section id="main_content">
+        <small>4 April 2019</small>
+<h1>Encryptctf Slashslash</h1>
+
+<p class="view">by <a href="https://github.com/eshaan7" style="tex-decoration: none; color: inherit">eshaan7</a></p>
+
+<h3 id="challenge-slash-slashfor-50-points-static-web">Challenge: Slash Slash(for 50 points, static) [WEB]</h3>
+
+<h4 id="challenge-description">Challenge description:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//
+file: (handout_slashslash.7z[ ]
+Author: maskofmydisguise
+</code></pre></div></div>
+
+<h4 id="lets-capture-tis-fl4g">Let’s capture tis fl4g:</h4>
+
+<p>We are given a <code class="highlighter-rouge">handout_slashslash.7z</code> file here.
+It contains a Python virtual environment and a Flask(python) Application returning JSON data (the flag) at /encryptCTF route.
+Now, we know that the Flask Application loads the flag from the environment variable FLAG. This Environment Variable is loaded when the virtual environment is activated using</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source ./env/bin/activate
+</code></pre></div></div>
+
+<p>then when we go to the /encryptCTF route we get this,</p>
+
+<pre><code class="language-JSON">flag: encryptCTF{}
+</code></pre>
+
+<p><em>LMAOOO000000000000OOOOOOOOOO0000</em></p>
+
+<p>So, we gotta think now and since the <code class="highlighter-rouge">application.py</code> file also includes a link to learn about virtual environments and if we concentrate on the challenge name, what dies that tell us? maybe something important is commented out somewhere ? eh, just a thought.</p>
+
+<p>Anyhoo, In the env/bin/activate script you will find the environment variable being exported as an env var (all encoded in base64). Simply decode the base64 to get the flag.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FLAG: encryptCTF{comments_&amp;_indentations_makes_johnny_a_good_programmer}
+</code></pre></div></div>
+
+<p>We could have also ran</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep -nir encryptCTF
+</code></pre></div></div>
+
+<p>on the app/ and still wouldn’t have got anything.
+but, if we do</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep -nir `echo "encryptCTF" | base64`
+</code></pre></div></div>
+
+<p>We get the location of the flag. :)</p>
+
+<h5 id="bonus">BONUS:</h5>
+
+<p>Virtual environments are awesome!
+The purpose is to ease development and also store config, requirements.txt, no need to pip install anything.
+I made this challenge to introduce people to environment variables, virtual environment and basic web development using Flask microframework which I love. :)</p>
+
+<h4 id="thankyou-for-reading-happy-hackin--eshaan7">Thankyou for reading, happy hackin’! ~ <a href="https://eshaan7.cf/">eshaan7</a></h4>
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+<canvas id="scene"></canvas>
+    <input id="copy" value="Abs0lut3Pwn4g3" style="display:none;"/>
+    
+  </body>
+</html>

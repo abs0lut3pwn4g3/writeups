@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script type="text/javascript" src="/assets/js/bganimate.js"></script>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Encryptctf Journeytothecentreofthefile1 | Abs0lut3Pwn4g3</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Encryptctf Journeytothecentreofthefile1" />
+<meta name="author" content="eshaan7" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Challenge: Journey to the centre of the file 1(for 75 points, static) [Forensics]" />
+<meta property="og:description" content="Challenge: Journey to the centre of the file 1(for 75 points, static) [Forensics]" />
+<link rel="canonical" href="http://localhost:4000/2019/04/04/encryptctf-journeytothecentreofthefile1.html" />
+<meta property="og:url" content="http://localhost:4000/2019/04/04/encryptctf-journeytothecentreofthefile1.html" />
+<meta property="og:site_name" content="Abs0lut3Pwn4g3" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-04T00:00:00+05:30" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"eshaan7"},"description":"Challenge: Journey to the centre of the file 1(for 75 points, static) [Forensics]","@type":"BlogPosting","headline":"Encryptctf Journeytothecentreofthefile1","dateModified":"2019-04-04T00:00:00+05:30","datePublished":"2019-04-04T00:00:00+05:30","url":"http://localhost:4000/2019/04/04/encryptctf-journeytothecentreofthefile1.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/04/encryptctf-journeytothecentreofthefile1.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    
+
+    <header>
+      <div class="container">
+        <h1>Abs0lut3Pwn4g3</h1>
+        <h2>writeups</h2>
+      </div>
+    </header>
+  
+    <div class="container">
+      <section id="main_content">
+        <small>4 April 2019</small>
+<h1>Encryptctf Journeytothecentreofthefile1</h1>
+
+<p class="view">by <a href="https://github.com/eshaan7" style="tex-decoration: none; color: inherit">eshaan7</a></p>
+
+<h3 id="challenge-journey-to-the-centre-of-the-file-1for-75-points-static-forensics">Challenge: Journey to the centre of the file 1(for 75 points, static) [Forensics]</h3>
+
+<h4 id="challenge-description">Challenge description:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Nearly everything is really interesting if you go into it deeply enough …" - Richard Feynman
+Author: maskofmydisguise
+file : (ziptunne1.gz)[]
+</code></pre></div></div>
+
+<h4 id="lets-capture-tis-fl4g">Let’s capture tis fl4g:</h4>
+
+<p>We are given a <code class="highlighter-rouge">ziptunne1.gz</code> file which as the name says is <code class="highlighter-rouge">gzipped</code> again and again.</p>
+
+<p>I don’t know if someone tried this manually, but seriously like um don’t do that?
+We are hackers, let the computer do the manual labour for us!
+So we write a shell script. ez pz 
+<sub><sup>I use range 1-100 cz we don’t know how many stages of archiving is there. So just a guess.</sup></sub></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+mkdir tmp
+cp ziptunnel1.gz tmp/ <span class="c"># creating tmp directory and solving there coz we use `ls` to get filenames</span>
+<span class="nb">cd </span>tmp/
+<span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>1..100<span class="o">}</span>
+<span class="k">do
+	if</span> <span class="o">[</span> <span class="k">$((</span>i%2<span class="k">))</span> <span class="nt">-eq</span> 0 <span class="o">]</span>
+   	<span class="k">then
+   		</span>gzip <span class="nt">-d</span> <span class="k">*</span>
+	<span class="k">else
+		</span>unzip <span class="k">*</span>
+		rm <span class="k">*</span>.zip <span class="o">&gt;</span> /dev/null 2&gt;&amp;1
+	<span class="k">fi
+done</span>
+</code></pre></div></div>
+
+<p>As the script loops over every stage, it finally hits a stop when we get a <code class="highlighter-rouge">flag.txt</code> which contains the flag! ez pz</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FLAG: encryptCTF{w422up_b14tch3s}
+</code></pre></div></div>
+
+<h4 id="thankyou-for-reading-happy-hackin--eshaan7">Thankyou for reading, happy hackin’! ~ <a href="https://eshaan7.cf/">eshaan7</a></h4>
+
+
+
+
+  <small>tags: <em></em></small>
+
+
+      </section>
+    </div>
+<canvas id="scene"></canvas>
+    <input id="copy" value="Abs0lut3Pwn4g3" style="display:none;"/>
+    
+  </body>
+</html>
