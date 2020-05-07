@@ -8,7 +8,7 @@ description: writeups
 <ul>
   {% for post in site.posts %}
     <li>
-      <h2><a href="http://abs0lut3pwn4g3.cf/writeups{{post.url}}">{{ post.title }}</a></h2>
+      <h2><a href="http://abs0lut3pwn4g3.github.io/writeups{{post.url}}">{{ post.title }}</a></h2>
       <p>{{ post.excerpt }}</p>
     </li>
   {% endfor %}
